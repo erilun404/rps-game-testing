@@ -113,7 +113,7 @@ describe("RockPaperScissor unit tests", () => {
         const addNameButton = screen.getByRole('button') 
         fireEvent.click(addNameButton)
     
-        const userName = screen.getByRole('heading' , {level: 1})
+        const userName = screen.getByRole('heading' , {level: 1})  //should it not be h1? 
     
         expect(userName).toHaveTextContent(`Welcome, ${mockName}!`)
     })
