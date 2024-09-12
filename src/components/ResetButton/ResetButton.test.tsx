@@ -1,5 +1,5 @@
 import {fireEvent, render, screen} from '@testing-library/react'
-import ResetButton from './ResetButton'
+import ResetButton from '.'
 
 describe("Check that reset button works and with correct props", () => {
     test("Reset button renders correctly", () => {
