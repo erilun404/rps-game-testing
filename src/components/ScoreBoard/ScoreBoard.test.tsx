@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react'
-import ScoreBoard from './ScoreBoard'
+import ScoreBoard from '.'
 
 describe("Check that the score shows correctly", () => { // ok description?
     test("Check that scores renders", () => {
