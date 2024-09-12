@@ -1,5 +1,5 @@
 import { render, screen} from '@testing-library/react'
-import DisplayResult from './DisplayResult'
+import DisplayResult from '.'
 
 describe("Check that the component works correctly", () => {
     test("Check the choices render correctly", () => {
