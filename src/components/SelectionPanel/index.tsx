@@ -2,6 +2,7 @@
 type SelectionPanelProps = {
   onSelect: (choice: string) => void;
 };
+
 const SelectionPanel = ({ onSelect }: SelectionPanelProps) => {
   return (
     <div>
