@@ -1,4 +1,4 @@
-import RockPaperScissors from "./RockPaperScissors"
+import RockPaperScissors from "."
 import {fireEvent, render, screen} from '@testing-library/react'
 
 describe('RockPaperScissors integration tests', () => {
