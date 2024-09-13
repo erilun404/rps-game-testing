@@ -18,8 +18,16 @@ const RockPaperScissors = () => {
     return (
         <>
         <ChooseName updateName={userName} />
+        <div>
+             <h1>Welcome, {name}!</h1> 
+        </div>
         <SelectionPanel onSelect={selectedChoice} />
-        
+        <div>
+            <p>Choose Rock, Paper or Scissors!</p> //flytta till displayResult
+        </div>
+        <div>
+            <p>You chose {choice}</p>
+        </div>
         </>
         
     )
