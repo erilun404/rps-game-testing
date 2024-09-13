@@ -2,11 +2,19 @@
 import SelectionPanel from "../SelectionPanel"
 import { useState } from "react"
 import ChooseName from "../ChooseName"
+import ResetButton from "../ResetButton"
+import ScoreBoard from "../ScoreBoard"
 
 const RockPaperScissors = () => {
     const [choice, setChoice] = useState('')
     const [name, setName] = useState('')
+    const [reset, setReset] = useState(true)
     
+    const restartGame = () => {
+        setReset(false)
+        // Här ska ScoreBoard useState vara?
+    }
+
     const selectedChoice = (choice:string) => {
         setChoice(choice)
         console.log(choice)
@@ -15,6 +23,7 @@ const RockPaperScissors = () => {
         setName(name)
         console.log(name)
     }
+    
     return (
         <>
         <ChooseName updateName={userName} />
@@ -23,11 +32,12 @@ const RockPaperScissors = () => {
         </div>
         <SelectionPanel onSelect={selectedChoice} />
         <div>
-            <p>Choose Rock, Paper or Scissors!</p> //flytta till displayResult
+            <p>Choose Rock, Paper or Scissors!</p> {/*flytta till displayResult*/}
         </div>
         <div>
             <p>You chose {choice}</p>
         </div>
+        <ResetButton onReset={restartGame}/>
         </>
         
     )
