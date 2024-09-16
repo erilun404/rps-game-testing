@@ -8,11 +8,10 @@ import ScoreBoard from "../ScoreBoard"
 const RockPaperScissors = () => {
     const [choice, setChoice] = useState('')
     const [name, setName] = useState('')
-    const [reset, setReset] = useState(true)
     
     const restartGame = () => {
-        setReset(false)
-        // Här ska ScoreBoard useState vara?
+        setChoice('')
+       
     }
 
     const selectedChoice = (choice:string) => {
