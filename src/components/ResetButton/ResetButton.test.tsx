@@ -18,4 +18,4 @@ describe("Check that reset button works and with correct props", () => {
 
         expect(onResetMock).toHaveBeenCalled() // Ok test ??
    })
-})
+})  //test for prop name?
