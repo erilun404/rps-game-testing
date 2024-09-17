@@ -7,7 +7,8 @@ type ScoreBoardProps = {
 const ScoreBoard = ({computerScore, playerScore, userName}: ScoreBoardProps) => {
     return (
         <div>
-
+            <p data-testid="player-score">{userName}: {playerScore}</p>
+            <p data-testid="computer-score">Computer: {computerScore}</p>
         </div>
     )
 }
