@@ -11,15 +11,13 @@ const RockPaperScissors = () => {
     const [name, setName] = useState('')
     const [computerChoice,  setComputerChoice] = useState<string>('')
     const [result, setResult] = useState<string>('');
-    
+    const [playerScore, setPlayerScore] = useState<number>(0);
+    const [computerScore, setComputerScore] = useState<number>(0);
     
     const selectedChoice = (choice:string) => {
         setChoice(choice)
         const computerMove = getComputerRandomChoice()  // Get random computer choice
-        setComputerChoice(computerMove)  // Update state with computer's choice
-        console.log("User's choice:", choice)
-        console.log("Computer's choice:", computerMove)
-      
+        setComputerChoice(computerMove)  // Update state with computer's choice     
     }
 
     const evaluateResults = (choice:string, computerChoice:string) => {
@@ -42,10 +40,8 @@ const RockPaperScissors = () => {
         }
     }, [computerChoice])
 
-
     const userName = (name:string) => {
         setName(name)
-        console.log(name)
     }
 
     //setComputerChoice(getComputerRandomChoice());
@@ -75,7 +71,14 @@ const RockPaperScissors = () => {
             playerChoice={choice}
             computerChoice={computerChoice}
             result={result} />
-        </div>        
+        </div>   
+        <div>
+            <ScoreBoard
+            playerScore={playerScore}
+            computerScore={computerScore}
+            userName={name}
+            />
+        </div>     
         </div>
         <ResetButton onReset={restartGame}/>
         </>
