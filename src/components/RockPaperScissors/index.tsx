@@ -1,14 +1,16 @@
 'use client'
-import SelectionPanel from "../SelectionPanel"
-import { useState } from "react"
-import ChooseName from "../ChooseName"
-import ResetButton from "../ResetButton"
-import ScoreBoard from "../ScoreBoard"
+import SelectionPanel from "../SelectionPanel";
+import { useState } from "react";
+import ChooseName from "../ChooseName";
+import ResetButton from "../ResetButton";
+import ScoreBoard from "../ScoreBoard";
+import DisplayResult from "../DisplayResult";
 
 const RockPaperScissors = () => {
     const [choice, setChoice] = useState('')
     const [name, setName] = useState('')
     const [computerChoice,  setComputerChoice] = useState<string>('')
+    const [result, setResult] = useState<string>('');
     
     
     const restartGame = () => {
