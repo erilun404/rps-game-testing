@@ -67,11 +67,14 @@ const RockPaperScissors = () => {
             {!name ? (
             <ChooseName updateName={userName} />
             ) : (
-                <>
+                <div className="flex justify-center flex-col items-center border-2 border-slate-200 py-24">
                     <div>
-                        <h1>Welcome, {name}!</h1> 
+                        <h1 className="text-2xl">Welcome, {name}!</h1> 
                     </div>
+                    <div className="flex">
                     <SelectionPanel onSelect={selectedChoice} />
+                    </div>
+                    
                     <div>
                     <div>
                         <DisplayResult
@@ -90,7 +93,7 @@ const RockPaperScissors = () => {
                     <div>
                     <ResetButton onReset={restartGame}/>
                     </div>
-                </>
+                </div>
             )}
         </>
     );
