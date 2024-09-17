@@ -1,6 +1,9 @@
 const Header = () => {
     return (
-        <h1>Rock Papahhhh Scizzors Game</h1> //test dont say what kind of header it is, should be an h1?
+        <div className="bg-[#a3c4bc] py-10 text-center">
+             <h1 className="text-4xl font-medium">Rock Papahhhh Scizzors Game</h1>
+        </div>
+       
     )
 }
 
