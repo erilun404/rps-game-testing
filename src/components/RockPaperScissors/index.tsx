@@ -56,8 +56,9 @@ const RockPaperScissors = () => {
 
     const restartGame = () => {
         setChoice('');
-        
-       
+        setComputerChoice('');
+        setResult('');
+               
     }
 
     
@@ -68,9 +69,6 @@ const RockPaperScissors = () => {
              <h1>Welcome, {name}!</h1> 
         </div>
         <SelectionPanel onSelect={selectedChoice} />
-        <div>
-            <p>Choose Rock, Paper or Scissors!</p> {/*flytta till displayResult*/}
-        </div>
         <div>
         <div>
             <DisplayResult
