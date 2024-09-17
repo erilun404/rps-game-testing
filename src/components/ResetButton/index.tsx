@@ -6,7 +6,7 @@ type resetButtonProps = {
 const ResetButton = ({onReset}:resetButtonProps) => {
     return (
         <div>
-            <button onClick={() => onReset()}>Reset</button>
+            <button onClick={() => onReset()}>Reset Game</button>
         </div>
     )
 }

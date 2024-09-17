@@ -54,36 +54,44 @@ const RockPaperScissors = () => {
         setChoice('');
         setComputerChoice('');
         setResult('');
+        setPlayerScore(0);
+        setComputerScore(0);
                
     }
 
     
     return (
         <>
-        <ChooseName updateName={userName} />
-        <div>
-             <h1>Welcome, {name}!</h1> 
-        </div>
-        <SelectionPanel onSelect={selectedChoice} />
-        <div>
-        <div>
-            <DisplayResult
-            playerChoice={choice}
-            computerChoice={computerChoice}
-            result={result} />
-        </div>   
-        <div>
-            <ScoreBoard
-            playerScore={playerScore}
-            computerScore={computerScore}
-            userName={name}
-            />
-        </div>     
-        </div>
-        <ResetButton onReset={restartGame}/>
+            {!name ? (
+            <ChooseName updateName={userName} />
+            ) : (
+                <>
+                    <div>
+                        <h1>Welcome, {name}!</h1> 
+                    </div>
+                    <SelectionPanel onSelect={selectedChoice} />
+                    <div>
+                    <div>
+                        <DisplayResult
+                        playerChoice={choice}
+                        computerChoice={computerChoice}
+                        result={result} />
+                    </div>   
+                    <div>
+                        <ScoreBoard
+                        playerScore={playerScore}
+                        computerScore={computerScore}
+                        userName={name}
+                        />
+                    </div>     
+                    </div>
+                    <div>
+                    <ResetButton onReset={restartGame}/>
+                    </div>
+                </>
+            )}
         </>
-        
-    )
+    );
 }
 
 export default RockPaperScissors
