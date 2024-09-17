@@ -28,8 +28,10 @@ const RockPaperScissors = () => {
             (choice === "Scissors" && computerChoice === "Paper") ||
             (choice === "Paper" && computerChoice === "Rock")
         ){
+            setPlayerScore((prev) => prev + 1)
             return "You winnn!";
         }else {
+            setComputerScore((prev) => prev + 1)
             return "Stupid bot computer wins!";
         }
     }
