@@ -69,8 +69,8 @@ const RockPaperScissors = () => {
             {!name ? (
             <ChooseName updateName={userName} />
             ) : (
-                <div className="flex justify-center flex-col items-center border-2 border-slate-200 py-24">
-                    <div>
+                <div className="flex justify-center flex-col items-center border-2 border-slate-200 py-20">
+                    <div className="pb-7">
                         <h1 className="text-2xl">Welcome, {name}!</h1> 
                     </div>
                     <div className="flex">
