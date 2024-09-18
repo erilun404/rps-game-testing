@@ -7,8 +7,8 @@ import ScoreBoard from "../ScoreBoard";
 import DisplayResult from "../DisplayResult";
 
 const RockPaperScissors = () => {
-    const [choice, setChoice] = useState('')
-    const [name, setName] = useState('')
+    const [choice, setChoice] = useState<string>('')
+    const [name, setName] = useState<string>('')
     const [computerChoice,  setComputerChoice] = useState<string>('')
     const [result, setResult] = useState<string>('');
     const [playerScore, setPlayerScore] = useState<number>(0);
@@ -48,7 +48,6 @@ const RockPaperScissors = () => {
         setName(name)
     }
 
-    //setComputerChoice(getComputerRandomChoice());
     const getComputerRandomChoice = ():string => {
         const choices = ["Rock", "Paper", "Scissors"];
         return choices[Math.floor(Math.random() * choices.length)]
@@ -63,7 +62,6 @@ const RockPaperScissors = () => {
                
     }
 
-    
     return (
         <>
             {!name ? (
