@@ -7,8 +7,8 @@ import ScoreBoard from "../ScoreBoard";
 import DisplayResult from "../DisplayResult";
 
 const RockPaperScissors = () => {
-    const [choice, setChoice] = useState('')
-    const [name, setName] = useState('')
+    const [choice, setChoice] = useState<string>('')
+    const [name, setName] = useState<string>('')
     const [computerChoice,  setComputerChoice] = useState<string>('')
     const [result, setResult] = useState<string>('');
     const [playerScore, setPlayerScore] = useState<number>(0);
