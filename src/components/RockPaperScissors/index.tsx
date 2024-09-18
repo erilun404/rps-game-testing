@@ -17,7 +17,9 @@ const RockPaperScissors = () => {
     const selectedChoice = (choice:string) => {
         setChoice(choice)
         const computerMove = getComputerRandomChoice()  // Get random computer choice
-        setComputerChoice(computerMove)  // Update state with computer's choice     
+        setComputerChoice(computerMove)  // Update state with computer's choice
+        setComputerChoice('');
+        setTimeout(() => setComputerChoice(computerMove), 0);     
     }
 
     const evaluateResults = (choice:string, computerChoice:string) => {
@@ -37,7 +39,7 @@ const RockPaperScissors = () => {
     }
 
     useEffect(() => {
-        if(choice !== '') {
+        if(choice !== '' && computerChoice !== '') {
             setResult(evaluateResults(choice, computerChoice));
         }
     }, [computerChoice])
