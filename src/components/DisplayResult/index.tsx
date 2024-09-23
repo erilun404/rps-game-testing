@@ -5,20 +5,22 @@ type DisplayResultProps = {
 };
 
 const DisplayResult = ({playerChoice, computerChoice, result}: DisplayResultProps) => {
+    console.log("Recevied props");
+    console.log("playerChoice: ", playerChoice);
+    console.log("computerChoice: ", computerChoice);
+    console.log("result: ", result);
     return ( 
         <>
-        <div className="flex flex-col mt-6 items-center"> 
-            {playerChoice && <p data-testid="player-choice">You chose {playerChoice}</p>} {/* Vet inte vilken tag det ska vara p, h2? */}
-            {computerChoice && <p data-testid="computer-choice">Computer chose {computerChoice}</p>}
-        </div>
-        <div className="text-center">
-            <p className="py-6 font-bold text-lg" data-testid="who-won">
-            {result || "Choose Rock, Paper or Scissors!"}
-            </p> 
-        </div>
-        
+            <div className="flex flex-col mt-6 items-center"> 
+                {playerChoice && <p data-testid="player-choice">You chose {playerChoice}</p>} {/* Vet inte vilken tag det ska vara p, h2? */}
+                {computerChoice && <p data-testid="computer-choice">Computer chose {computerChoice}</p>}
+            </div>
+            <div className="text-center">
+                <p className="py-6 font-bold text-lg" data-testid="who-won">
+                {result || "Choose Rock, Paper or Scissors!"}
+                </p> 
+            </div>
         </>
-
     )
 }
 

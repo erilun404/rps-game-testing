@@ -7,17 +7,17 @@ import ScoreBoard from "../ScoreBoard";
 import DisplayResult from "../DisplayResult";
 
 const RockPaperScissors = () => {
-    const [choice, setChoice] = useState<string>('')
-    const [name, setName] = useState<string>('')
-    const [computerChoice,  setComputerChoice] = useState<string>('')
+    const [choice, setChoice] = useState<string>('');
+    const [name, setName] = useState<string>('');
+    const [computerChoice,  setComputerChoice] = useState<string>('');
     const [result, setResult] = useState<string>('');
     const [playerScore, setPlayerScore] = useState<number>(0);
     const [computerScore, setComputerScore] = useState<number>(0);
     
     const selectedChoice = (choice:string) => {
         setChoice(choice)
-        const computerMove = getComputerRandomChoice()  // Get random computer choice
-        setComputerChoice(computerMove)  // Update state with computer's choice
+        const computerMove = getComputerRandomChoice()
+        setComputerChoice(computerMove)
         setComputerChoice('');
         setTimeout(() => setComputerChoice(computerMove), 0);     
     }
@@ -48,7 +48,6 @@ const RockPaperScissors = () => {
         setName(name)
     }
 
-    //setComputerChoice(getComputerRandomChoice());
     const getComputerRandomChoice = ():string => {
         const choices = ["Rock", "Paper", "Scissors"];
         return choices[Math.floor(Math.random() * choices.length)]
@@ -59,11 +58,9 @@ const RockPaperScissors = () => {
         setComputerChoice('');
         setResult('');
         setPlayerScore(0);
-        setComputerScore(0);
-               
+        setComputerScore(0);               
     }
 
-    
     return (
         <>
             {!name ? (
@@ -74,15 +71,15 @@ const RockPaperScissors = () => {
                         <h1 className="text-2xl">Welcome, {name}!</h1> 
                     </div>
                     <div className="flex">
-                    <SelectionPanel onSelect={selectedChoice} />
+                        <SelectionPanel onSelect={selectedChoice} 
+                        />
                     </div>
-                    
-                    <div>
                     <div>
                         <DisplayResult
                         playerChoice={choice}
                         computerChoice={computerChoice}
-                        result={result} />
+                        result={result} 
+                        />
                     </div>   
                     <div>
                         <ScoreBoard
@@ -91,9 +88,9 @@ const RockPaperScissors = () => {
                         userName={name}
                         />
                     </div>     
-                    </div>
                     <div>
-                    <ResetButton onReset={restartGame}/>
+                        <ResetButton 
+                        onReset={restartGame}/>
                     </div>
                 </div>
             )}
