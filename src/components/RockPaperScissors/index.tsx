@@ -18,8 +18,8 @@ const RockPaperScissors = () => {
         setChoice(choice)
         const computerMove = getComputerRandomChoice()
         setComputerChoice(computerMove)
-        setComputerChoice('');
-        setTimeout(() => setComputerChoice(computerMove), 0);     
+        //setComputerChoice('');
+        //setTimeout(() => setComputerChoice(computerMove), 0);   
     }
 
     const evaluateResults = (choice:string, computerChoice:string) => {

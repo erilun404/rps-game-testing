@@ -1,11 +1,11 @@
 'use client'
-import { useState,  HTMLInputTypeAttribute, SetStateAction} from "react"
+import { useState,  HTMLInputTypeAttribute, SetStateAction} from "react";
 
 type ChooseNameProps = {
     updateName:(name:string) => void
 }
 const ChooseName = ({updateName}:ChooseNameProps) => {
-    const [userInput, setUserInput] = useState<HTMLInputTypeAttribute>('')
+    const [userInput, setUserInput] = useState<HTMLInputTypeAttribute>('');
 
     const handleChange= (e: { target: { value: SetStateAction<HTMLInputTypeAttribute>; }; }) => {
         setUserInput(e.target.value)

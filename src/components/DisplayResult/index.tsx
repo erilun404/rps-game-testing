@@ -5,10 +5,6 @@ type DisplayResultProps = {
 };
 
 const DisplayResult = ({playerChoice, computerChoice, result}: DisplayResultProps) => {
-    console.log("Recevied props");
-    console.log("playerChoice: ", playerChoice);
-    console.log("computerChoice: ", computerChoice);
-    console.log("result: ", result);
     return ( 
         <>
             <div className="flex flex-col mt-6 items-center"> 
