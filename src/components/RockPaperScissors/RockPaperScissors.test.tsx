@@ -1,5 +1,6 @@
 import RockPaperScissors from "."
-import {fireEvent, render, screen} from '@testing-library/react'
+import {fireEvent, render, screen} from '@testing-library/react';
+import { act } from "@testing-library/react"; // Added by Maria & Erika
 
 describe('RockPaperScissors integration tests', () => {
   test('Game resets when the reset button is clicked', () => {
@@ -44,6 +45,7 @@ describe('RockPaperScissors integration tests', () => {
 
 
     test('Verify all possible outcomes when player chooses Rock', () => {
+        jest.useFakeTimers(); //Added by Maria & Erika
         render(<RockPaperScissors />);
 
         const nameInput = screen.getByPlaceholderText('Enter your name here');
@@ -60,6 +62,11 @@ describe('RockPaperScissors integration tests', () => {
       
         while (attempts < maxAttempts) {
           fireEvent.click(rockButton);
+
+          // Added by Maria & Erika
+          act(() => {
+            jest.runAllTimers();
+          });
       
           // Get the computer's choice and result??
           computerChoiceText = screen.getByTestId('computer-choice').textContent || '';
@@ -76,6 +83,8 @@ describe('RockPaperScissors integration tests', () => {
           attempts++;
         }
         expect(attempts).toBeGreaterThan(0);
+
+        jest.useRealTimers(); // Added by Maria & Erika
       });
 });
 
@@ -117,4 +126,5 @@ describe("RockPaperScissor unit tests", () => {
     
         expect(userName).toHaveTextContent(`Welcome, ${mockName}!`)
     })
+
 })
