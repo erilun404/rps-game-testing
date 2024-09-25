@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react'
 import ScoreBoard from '.'
 
-describe("Check that the score shows correctly", () => { // ok description?
+describe("Check that the score shows correctly", () => {
     test("Check that scores renders", () => {
         render(<ScoreBoard computerScore={4} playerScore={8} userName='' />)
 
@@ -25,6 +25,6 @@ describe("Check that the score shows correctly", () => { // ok description?
 
         const userName = screen.getByTestId('player-score')
 
-        expect(userName).toHaveTextContent('noah: 8') // this test ok!
+        expect(userName).toHaveTextContent('noah: 8')
     })
 })

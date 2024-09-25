@@ -30,7 +30,7 @@ describe("Check that all buttons renders correctly", () => {
         expect(scissorsButton).toHaveTextContent('Scissors');
     });
       
-      test('calls onSelect with the correct choice when a button is clicked', () => {
+      test('calls onSelect with the correct choice when a button is clicked', () => { //Should maybe not be in the test since it doesnt test from the users perspective Erika and Maria
         const onSelectMock = jest.fn();
         render(<SelectionPanel onSelect={onSelectMock} />);
         

@@ -16,6 +16,6 @@ describe("Check that reset button works and with correct props", () => {
 
         fireEvent.click(resetButton)
 
-        expect(onResetMock).toHaveBeenCalled() // Ok test ??
+        expect(onResetMock).toHaveBeenCalled()
    })
-})  //test for prop name?
+})

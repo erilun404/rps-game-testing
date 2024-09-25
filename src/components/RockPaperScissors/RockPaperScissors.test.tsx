@@ -1,6 +1,5 @@
 import RockPaperScissors from "."
-import {fireEvent, render, screen} from '@testing-library/react';
-import { act } from "@testing-library/react"; // Added by Maria & Erika
+import {fireEvent, render, screen, act} from '@testing-library/react'; //Added by Maria & Erika
 
 describe('RockPaperScissors integration tests', () => {
   test('Game resets when the reset button is clicked', () => {
@@ -35,14 +34,12 @@ describe('RockPaperScissors integration tests', () => {
     fireEvent.change(nameInput, { target: { value: 'Noah' } });
     fireEvent.click(addNameButton);
   
-    // Now the other components are working??
     const paperButton = screen.getByRole('button', { name: /paper/i });
     fireEvent.click(paperButton);
   
     const resultDisplay = screen.getByText(/You chose Paper/i);
     expect(resultDisplay).toBeInTheDocument();
   });
-
 
     test('Verify all possible outcomes when player chooses Rock', () => {
         jest.useFakeTimers(); //Added by Maria & Erika
@@ -58,7 +55,7 @@ describe('RockPaperScissors integration tests', () => {
         let resultText = '';
         let computerChoiceText = '';
         let attempts = 0;
-        const maxAttempts = 30; // avoid infinite loops
+        const maxAttempts = 30;
       
         while (attempts < maxAttempts) {
           fireEvent.click(rockButton);
@@ -68,7 +65,6 @@ describe('RockPaperScissors integration tests', () => {
             jest.runAllTimers();
           });
       
-          // Get the computer's choice and result??
           computerChoiceText = screen.getByTestId('computer-choice').textContent || '';
           resultText = screen.getByText(/you win|computer wins|it's a tie/i).textContent || '';
           
@@ -107,7 +103,7 @@ describe("RockPaperScissor unit tests", () => {
         expect(scissorsButton).toBeInTheDocument();
       });
 
-    test("Check updateName is called when button is clicked", () => { // dont have to fake anything since I already have the updatefuction
+    test("Check updateName is called when button is clicked", () => {
         render(<RockPaperScissors />)
         const mockName = "Noah"
         let userInput = screen.getByLabelText("Enter your name")
@@ -122,7 +118,7 @@ describe("RockPaperScissor unit tests", () => {
         const addNameButton = screen.getByRole('button') 
         fireEvent.click(addNameButton)
     
-        const userName = screen.getByRole('heading' , {level: 1})  //should it not be h1? 
+        const userName = screen.getByRole('heading' , {level: 1})  //should it not be h2 or something else than h1? Question from Erika and Maria 
     
         expect(userName).toHaveTextContent(`Welcome, ${mockName}!`)
     })

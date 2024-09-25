@@ -15,13 +15,13 @@ const RockPaperScissors = () => {
     const [computerScore, setComputerScore] = useState<number>(0);
     
     const selectedChoice = (choice:string) => {
-        setChoice(choice)
-        const computerMove = getComputerRandomChoice()
+        setChoice(choice);
+        const computerMove = getComputerRandomChoice();
         setComputerChoice('');
         setTimeout(() => setComputerChoice(computerMove), 0);   
     }
 
-    const evaluateResults = (choice:string, computerChoice:string) => {
+    const evaluateResults = (choice: string, computerChoice: string) => {
         if(choice === computerChoice) {
             return "It's a tie!";
         }else if (
@@ -29,13 +29,13 @@ const RockPaperScissors = () => {
             (choice === "Scissors" && computerChoice === "Paper") ||
             (choice === "Paper" && computerChoice === "Rock")
         ){
-            setPlayerScore((prev) => prev + 1)
+            setPlayerScore((prev) => prev + 1);
             return "You winnn!";
         }else {
-            setComputerScore((prev) => prev + 1)
+            setComputerScore((prev) => prev + 1);
             return "Stupid bot computer wins!";
         }
-    }
+    };
 
     useEffect(() => {
         if(choice !== '' && computerChoice !== '') {
@@ -43,14 +43,14 @@ const RockPaperScissors = () => {
         }
     }, [computerChoice])
 
-    const userName = (name:string) => {
+    const userName = (name: string) => {
         setName(name)
-    }
+    };
 
-    const getComputerRandomChoice = ():string => {
+    const getComputerRandomChoice = (): string => {
         const choices = ["Rock", "Paper", "Scissors"];
         return choices[Math.floor(Math.random() * choices.length)]
-    }
+    };
 
     const restartGame = () => {
         setChoice('');
@@ -58,7 +58,7 @@ const RockPaperScissors = () => {
         setResult('');
         setPlayerScore(0);
         setComputerScore(0);               
-    }
+    };
 
     return (
         <>
@@ -70,26 +70,24 @@ const RockPaperScissors = () => {
                         <h1 className="text-2xl">Welcome, {name}!</h1> 
                     </div>
                     <div className="flex">
-                        <SelectionPanel onSelect={selectedChoice} 
-                        />
+                        <SelectionPanel onSelect={selectedChoice} />
                     </div>
                     <div>
                         <DisplayResult
-                        playerChoice={choice}
-                        computerChoice={computerChoice}
-                        result={result} 
+                            playerChoice={choice}
+                            computerChoice={computerChoice}
+                            result={result} 
                         />
                     </div>   
                     <div>
                         <ScoreBoard
-                        playerScore={playerScore}
-                        computerScore={computerScore}
-                        userName={name}
+                            playerScore={playerScore}
+                            computerScore={computerScore}
+                            userName={name}
                         />
                     </div>     
                     <div>
-                        <ResetButton 
-                        onReset={restartGame}/>
+                        <ResetButton onReset={restartGame}/>
                     </div>
                 </div>
             )}
@@ -97,4 +95,4 @@ const RockPaperScissors = () => {
     );
 }
 
-export default RockPaperScissors
+export default RockPaperScissors;

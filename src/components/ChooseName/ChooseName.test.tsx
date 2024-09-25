@@ -1,7 +1,7 @@
 import {fireEvent, render, screen} from '@testing-library/react'
 import ChooseName from '.'
 
-describe("ChooseName component works correct?", () => { // better descripton??
+describe("ChooseName component works correct?", () => {
     test("Checks button and input field are rendered", () => {
         render(<ChooseName updateName={(name) =>{}} />)
 

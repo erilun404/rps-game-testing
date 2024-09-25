@@ -1,13 +1,3 @@
-Our reflect over the game test:
-
-Header
-Its not clear what kind of heading we should use. We think it should be a h1, so the test should have information about what level of heading it contains.
-
-RockPaperScissors
-User name should be lvl 1 but we think the h1 should not be here. It should be something else.
-
-Selection Panel
-The last test is it nessecery to test, since it is not a "user" test?
 
 ---
 
